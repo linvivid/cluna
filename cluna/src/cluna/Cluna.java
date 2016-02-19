@@ -23,15 +23,46 @@ public class Cluna {
      */
     public static void main(String[] args) {
      
+     /**
+     * NPC
+     */ 
         NPC lux = new NPC();
-        
         lux.setName("Lux");
-        
         lux.setDescription("Best Friend");
         
         String luxInfo = lux.toString();
         System.out.println(luxInfo);
         
-    }
+     /**
+     * Game
+     */ 
+        Game time = new Game();
+        //time.setTotalTime("totaltime");
+        
+        String timeInfo = time.toString();
+        System.out.println(timeInfo);        
+   
     
+    /**
+     * Item
+     */ 
+        Item cure = new Item();
+        cure.setName("Cure");
+       
+        
+        String cureInfo = cure.toString();
+        System.out.println(cureInfo);
+    
+        
+    /**
+     * LabSceneType
+     */ 
+            LabSceneType lab = new LabSceneType();
+            lab.setDescription("First Laboratory");
+            
+            String labInfo = lab.toString();
+            System.out.println(labInfo);
+        
+    }
+  
 }
