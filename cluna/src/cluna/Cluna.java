@@ -12,57 +12,37 @@ import cluna.model.LabSceneType;
 import cluna.model.Location;
 import cluna.model.Map;
 import cluna.model.Player;
+import cluna.view.StartProgramView;
 /**
  *
  * @author lindsayprigmore
  */
 public class Cluna {
 
-    /**
-     * @param args the command line arguments
-     */
+    private static Game currentGame = null;
+    private static Player player = null;
+    
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        Cluna.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        Cluna.player = player;
+    }
+    
+   ////MAIN FUNCTION IS HERE
     public static void main(String[] args) {
      
-     /**
-     * NPC
-     */ 
-        NPC lux = new NPC();
-        lux.setName("Lux");
-        lux.setDescription("Best Friend");
-        
-        String luxInfo = lux.toString();
-        System.out.println(luxInfo);
-        
-     /**
-     * Game
-     */ 
-        Game time = new Game();
-        //time.setTotalTime("totaltime");
-        
-        String timeInfo = time.toString();
-        System.out.println(timeInfo);        
-   
-    
-    /**
-     * Item
-     */ 
-        Item cure = new Item();
-        cure.setName("Cure");
-       
-        
-        String cureInfo = cure.toString();
-        System.out.println(cureInfo);
-    
-        
-    /**
-     * LabSceneType
-     */ 
-            LabSceneType lab = new LabSceneType();
-            lab.setDescription("First Laboratory");
-            
-            String labInfo = lab.toString();
-            System.out.println(labInfo);
-        
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.displayStartProgramView(); 
     }
   
 }
