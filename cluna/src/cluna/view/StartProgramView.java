@@ -7,6 +7,7 @@ package cluna.view;
 
 import cluna.control.GameControl;
 import cluna.model.Player;
+import java.util.Scanner;
 
 /**
  *
@@ -70,9 +71,9 @@ public class StartProgramView {
     }
     
     private void displayNextView(){
-        System.out.println("\n This is the first entry in the journal"
-                            + "\n that belongs to" + player.getName() + "."
-                            );
+//        System.out.println("\n This is the first entry in the journal"
+//                            + "\n that belongs to" + player.getName() + "."
+//                            );
             
     }
     

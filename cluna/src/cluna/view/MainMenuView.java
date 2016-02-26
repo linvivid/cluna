@@ -5,6 +5,8 @@
  */
 package cluna.view;
 
+import java.util.Scanner;
+
 /**
  *
  * @author gardensun
@@ -56,13 +58,13 @@ public class MainMenuView {
         
         switch (selection) {
             case 'G':
-                this.startNewGame();
+//                this.startNewGame();
                 break;
             case 'H':
-                this.displayHelpMenu();
+//                this.displayHelpMenu();
                 break;
             case 'S':
-                this.saveGame();
+//                this.saveGame();
                 break;
             case 'E':
                 return;
