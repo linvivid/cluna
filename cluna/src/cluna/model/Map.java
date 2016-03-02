@@ -4,67 +4,52 @@
  * and open the template in the editor.
  */
 package cluna.model;
+
 import java.io.Serializable;
+
 /**
  *
  * @author lindsayprigmore
  */
-public class Map implements Serializable{
- 
-    private int numRows;
-    private int numCols;
+public class Map implements Serializable {
+
+    private static final int NUM_ROWS = 5;
+    private static final int NUM_COLS = 5;
+    private Location[][] locations;
 
     public Map() {
-    }
-    
-    
-
-    public int getNumRows() {
-        return numRows;
+        locations = new Location[NUM_ROWS][NUM_COLS];
+        init();
     }
 
-    public void setNumRows(int numRows) {
-        this.numRows = numRows;
-    }
+    public void init() {
 
-    public int getNumCols() {
-        return numCols;
-    }
-
-    public void setNumCols(int numCols) {
-        this.numCols = numCols;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 97 * hash + this.numRows;
-        hash = 97 * hash + this.numCols;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
+        for (int row = 0; row < NUM_ROWS; row++) {
+            for (int col = 0; col < NUM_COLS; col++) {
+                Location l = new Location();
+                int locationTypeIndex = (int) (Math.random() * LocationEnum.values().length);
+                l.setName(LocationEnum.values()[locationTypeIndex].toString());
+                l.setDescription(LocationEnum.values()[locationTypeIndex].toString());
+                locations[row][col] = l;
+            }
         }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Map other = (Map) obj;
-        if (this.numRows != other.numRows) {
-            return false;
-        }
-        if (this.numCols != other.numCols) {
-            return false;
-        }
-        return true;
     }
 
-    @Override
-    public String toString() {
-        return "Map{" + "numRows=" + numRows + ", numCols=" + numCols + '}';
+    public Location getLocation(int row, int col) {
+        return locations[row][col];
     }
-    
-    
+
+    public String getMapDisplay() {
+        String rtn = "";
+
+        for (int row = 0; row < NUM_ROWS; row++) {
+            for (int col = 0; col < NUM_COLS; col++) {
+                rtn += locations[row][col].getName().charAt(0) + "  ";
+            }
+            rtn += "\n";
+        }
+
+        return rtn;
+    }
+
 }

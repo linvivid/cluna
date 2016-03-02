@@ -5,22 +5,24 @@
  */
 package cluna.view;
 
+import cluna.Cluna;
+import cluna.control.GameControl;
+import cluna.model.Game;
 import java.util.Scanner;
 
 /**
  *
  * @author gardensun
  */
-// TESTING
 public class MainMenuView {
     
     private final String MENU = "\n"
             +"\n-------------------------"
             +"\n| Main Menu             |"
-            +"\n|nG - New Game"
-            +"\n|nH - Get Help"
-            +"\n|nS - Save Game"
-            +"\n|nE - Exit"
+            +"\n| G - New Game"
+            +"\n| H - Get Help"
+            +"\n| S - Save Game"
+            +"\n| E - Exit"
             +"\n-------------------------";
     
     public void displayMenu(){
@@ -59,10 +61,10 @@ public class MainMenuView {
         
         switch (selection) {
             case 'G':
-//                this.startNewGame();
+                    this.startNewGame();
                 break;
             case 'H':
-//                this.displayHelpMenu();
+                    this.displayHelpMenu();
                 break;
             case 'S':
 //                this.saveGame();
@@ -73,6 +75,18 @@ public class MainMenuView {
                 System.out.println("\nInvalid. Try again.");
                 break;
         }
+    }
+    
+    private void startNewGame() {
+        Game game = GameControl.createGame(Cluna.getPlayer());
+        Cluna.setCurrentGame(game);
+        
+        GameMenuView gm = new GameMenuView();
+        gm.displayMenu();
+    }
+    
+    private void displayHelpMenu() {
+        System.out.println("TO BE IMPLEMENTED");
     }
 }
 

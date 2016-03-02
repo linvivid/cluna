@@ -22,6 +22,14 @@ public class Cluna {
     private static Game currentGame = null;
     private static Player player = null;
     
+   ////MAIN FUNCTION IS HERE
+    public static void main(String[] args) {
+     
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.displayStartProgramView(); 
+    }
+ 
+    
     public static Game getCurrentGame() {
         return currentGame;
     }
@@ -37,12 +45,4 @@ public class Cluna {
     public static void setPlayer(Player player) {
         Cluna.player = player;
     }
-    
-   ////MAIN FUNCTION IS HERE
-    public static void main(String[] args) {
-     
-        StartProgramView startProgramView = new StartProgramView();
-        startProgramView.displayStartProgramView(); 
-    }
-  
 }

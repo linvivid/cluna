@@ -5,6 +5,8 @@
  */
 package cluna.model;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 /**
  *
@@ -13,11 +15,28 @@ import java.util.Objects;
 public class Player implements Serializable{
     
     private String name;
+    private List<Item> items;
+    private Location location;
 
     public Player() {
+        items = new ArrayList<>();
     }
-    
-    
+
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Item> items) {
+        this.items = items;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
 
     public String getName() {
         return name;
