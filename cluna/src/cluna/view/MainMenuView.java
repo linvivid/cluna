@@ -11,6 +11,7 @@ import java.util.Scanner;
  *
  * @author gardensun
  */
+// TESTING
 public class MainMenuView {
     
     private final String MENU = "\n"
