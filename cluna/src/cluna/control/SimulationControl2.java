@@ -33,14 +33,10 @@ public class SimulationControl2 {
         
         if (guessAnswer != finalAnswer) {
             return "Incorrect. You may not access the cure."; }
-        
-        if (cureUsed > cureAmount) {
-            return "Incorrect. You may not access the cure."; }
        
+        if (guessB == answerB && guessC == answerC && guessAnswer == finalAnswer); {
+            return "A = 82, B = 15, C = 128, and the answer is 225. The cure has been unlocked."; }
        
-        String answer = "A = 82, B = 15, C = 128, and the answer is 225. The cure has been unlocked.";
-        return answer;
-        
         
     }
 }
