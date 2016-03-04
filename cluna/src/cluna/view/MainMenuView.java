@@ -16,47 +16,18 @@ import java.util.Scanner;
  */
 public class MainMenuView extends View {
     
-    private final String MENU = "\n"
+        public MainMenuView() {    
+            super("\n"
             +"\n-------------------------"
             +"\n| Main Menu             |"
             +"\n| G - New Game"
             +"\n| H - Get Help"
             +"\n| S - Save Game"
             +"\n| E - Exit"
-            +"\n-------------------------";
-    
-    public void displayMenu(){
-        char selection = ' ';
-        
-        do{
-            System.out.println(MENU);
-            
-            String input = this.getInput();
-            selection = input.charAt(0);
-            
-            this.doAction(selection);
-                       
-        } while (selection != 'E');
-    }
-    
-    private String getInput(){
-        Scanner keyboard= new Scanner(System.in);
-        String input = " ";
-        boolean validInput = false;
-        
-        while (!validInput) {
-            input = keyboard.nextLine();
-            input = input.trim();
-        
-            if(input.length() < 1){
-                System.out.println("\nInvalid value: You must enter a character.");
-                continue;
-            }
-            break; 
+            +"\n-------------------------");
         }
-        return input;
-    }
-    
+
+    @Override
     public void doAction(char selection){
         
         switch (selection) {
@@ -82,7 +53,7 @@ public class MainMenuView extends View {
         Cluna.setCurrentGame(game);
         
         GameMenuView gm = new GameMenuView();
-        gm.displayMenu();
+        gm.display();
     }
     
     private void displayHelpMenu() {

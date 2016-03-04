@@ -48,9 +48,11 @@ public abstract class View implements InterfaceView {
         boolean validInput = false;
 
         while (!validInput) {
+            System.out.println("\n" + this.displayMessage);
             input = keyboard.nextLine();
             input = input.trim();
-
+            input = input.toUpperCase();
+            
             if (input.length() < 1) {
                 System.out.println("\nInvalid value: You must enter a character.");
                 continue;
