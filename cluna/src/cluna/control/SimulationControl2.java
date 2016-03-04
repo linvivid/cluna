@@ -35,7 +35,7 @@ public class SimulationControl2 {
             return "Incorrect. You may not access the cure."; }
        
         if (guessB == answerB && guessC == answerC && guessAnswer == finalAnswer); {
-            return "A = 82, B = 15, C = 128, and the answer is 225. The cure has been unlocked."; }
+            return "B = 15, C = 128, and the answer is 225. The cure has been unlocked."; }
        
         
     }
