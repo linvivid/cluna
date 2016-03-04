@@ -12,9 +12,10 @@ import java.util.Scanner;
  *
  * @author gardensun
  */
-public class GameMenuView {
+public class GameMenuView extends View {
 
-    private final String MENU = "\n"
+    public GameMenuView() {
+        super ("\n"
             + "\n-------------------------"
             + "\n| Game Menu             |"
             + "\n| C - Synthesize Cure"
@@ -25,40 +26,10 @@ public class GameMenuView {
             + "\n| S - Move South"
             + "\n| W - Move West"
             + "\n| Q - Quit to Main Menu"
-            + "\n-------------------------";
-
-    public void displayMenu() {
-        char selection = ' ';
-
-        do {
-            System.out.println(MENU);
-
-            String input = this.getInput();
-            selection = input.charAt(0);
-
-            this.doAction(selection);
-
-        } while (selection != 'Q');
-    }
-
-    private String getInput() {
-        Scanner keyboard = new Scanner(System.in);
-        String input = " ";
-        boolean validInput = false;
-
-        while (!validInput) {
-            input = keyboard.nextLine();
-            input = input.trim();
-
-            if (input.length() < 1) {
-                System.out.println("\nInvalid value: You must enter a character.");
-                continue;
-            }
-            break;
-        }
-        return input;
-    }
-
+            + "\n-------------------------");
+    }    
+    
+    @Override
     public void doAction(char selection) {
 
         switch (selection) {

@@ -16,8 +16,8 @@ import java.util.Scanner;
  */
 public class MainMenuView extends View {
     
-        public MainMenuView() {    
-            super("\n"
+    public MainMenuView() {    
+        super("\n"
             +"\n-------------------------"
             +"\n| Main Menu             |"
             +"\n| G - New Game"
@@ -52,8 +52,8 @@ public class MainMenuView extends View {
         Game game = GameControl.createGame(Cluna.getPlayer());
         Cluna.setCurrentGame(game);
         
-        GameMenuView gm = new GameMenuView();
-        gm.display();
+        MainMenuView mainMenuView = new MainMenuView();
+        mainMenuView.display();
     }
     
     private void displayHelpMenu() {

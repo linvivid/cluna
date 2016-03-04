@@ -39,7 +39,7 @@ public class StartProgramView {
         Cluna.setPlayer(p);
         
         MainMenuView mm = new MainMenuView();
-        mm.displayMenu();
+        mm.display();
     }
 
     private void displayWelcome(String name) {

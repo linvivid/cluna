@@ -49,6 +49,7 @@ public abstract class View implements InterfaceView {
 
         while (!validInput) {
             System.out.println("\n" + this.displayMessage);
+            
             input = keyboard.nextLine();
             input = input.trim();
             input = input.toUpperCase();
