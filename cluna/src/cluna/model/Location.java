@@ -12,15 +12,22 @@ import java.util.Objects;
  */
 public class Location implements Serializable{
     
-    public boolean visited;
-    public String name;
-    public String description;
+    private boolean visited;
+    private String name;
+    private String description;
+    private Item item;
 
     public Location() {
     }
-    
-    
 
+    public Item getItem() {
+        return item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
+    }
+    
     public boolean isVisited() {
         return visited;
     }

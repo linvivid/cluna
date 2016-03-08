@@ -7,9 +7,11 @@ package cluna.control;
 
 import cluna.Cluna;
 import cluna.model.Game;
+import cluna.model.Item;
 import cluna.model.Map;
 import cluna.model.Player;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -40,9 +42,33 @@ public class GameControl {
         Map gameMap = new Map();
         p.setLocation(gameMap.getLocation(0, 0));
         
+        List<Item> gameItems = createItems();
+        
+        setupItemLocations(gameMap, gameItems);
+        
         newGame.setMap(gameMap);
         
         return newGame;
+    }
+    
+    private static void setupItemLocations(Map map, List<Item> items) {
+        
+        //TODO randomize item locations
+        map.getLocation(0, 1).setItem(items.get(0));
+        
+    }
+    
+    private static List<Item> createItems() {
+        
+        List<Item> items = new ArrayList<>();
+        
+        //TODO Repeat this a lot
+        Item petriDish = new Item();
+        petriDish.setName("Petri Dish");
+        items.add(petriDish);
+        //end repeat section
+        
+        return items;
     }
 
 }

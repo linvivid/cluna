@@ -5,12 +5,7 @@
  */
 package cluna;
 
-import cluna.model.NPC;
 import cluna.model.Game;
-import cluna.model.Item;
-import cluna.model.LabSceneType;
-import cluna.model.Location;
-import cluna.model.Map;
 import cluna.model.Player;
 import cluna.view.StartProgramView;
 /**
