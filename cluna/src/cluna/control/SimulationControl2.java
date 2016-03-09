@@ -17,6 +17,9 @@ package cluna.control;
  * C = ?
  * A+B+C = ?
  */
+
+
+
 public class SimulationControl2 {
     
     public String runSimulation2(int guessB, int guessC, int guessAnswer) {
