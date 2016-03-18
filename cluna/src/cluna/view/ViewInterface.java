@@ -3,14 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cluna.control;
+package cluna.view;
 
 /**
  *
  * @author lindsayprigmore
  */
-public class InventoryControl {
- 
-    //TODO methods that move the item from location to player
-    
+public interface ViewInterface {
+
+    public void display();
+
+    public String getInput();
+
+    public boolean doAction(String value);
+
 }

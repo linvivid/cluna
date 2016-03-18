@@ -28,9 +28,11 @@ public class MainMenuView extends View {
         }
 
     @Override
-    public void doAction(char selection){
+    public boolean doAction(String selection){
         
-        switch (selection) {
+        char charSelection = selection.toUpperCase().charAt(0);
+        
+        switch (charSelection) {
             case 'G':
                     this.startNewGame();
                 break;
@@ -41,19 +43,21 @@ public class MainMenuView extends View {
 //                this.saveGame();
                 break;
             case 'E':
-                return;
+                return true;
             default:
                 System.out.println("\nInvalid. Try again.");
                 break;
         }
+        
+        return false;
     }
     
     private void startNewGame() {
         Game game = GameControl.createGame(Cluna.getPlayer());
         Cluna.setCurrentGame(game);
         
-        MainMenuView mainMenuView = new MainMenuView();
-        mainMenuView.display();
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
     
     private void displayHelpMenu() {

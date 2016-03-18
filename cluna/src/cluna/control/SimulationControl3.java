@@ -15,6 +15,10 @@ public class SimulationControl3 {
         
         int vol = 200;
 
+        if (l<0 || w<0 || h<0){
+           return "All inputs must be greater than 0.";
+        }
+        
         int userAnswer = l * w * h;
 
         if (vol == userAnswer){

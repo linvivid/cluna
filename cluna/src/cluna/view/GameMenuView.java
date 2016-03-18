@@ -6,7 +6,7 @@
 package cluna.view;
 
 import cluna.Cluna;
-import java.util.Scanner;
+import cluna.model.Location;
 
 /**
  *
@@ -18,7 +18,6 @@ public class GameMenuView extends View {
         super ("\n"
             + "\n-------------------------"
             + "\n| Game Menu             |"
-            + "\n| C - Synthesize Cure"
             + "\n| V - View Map"
             + "\n| I - Search for Items"
             + "\n| N - Move North"
@@ -30,14 +29,13 @@ public class GameMenuView extends View {
     }    
     
     @Override
-    public void doAction(char selection) {
+    public boolean doAction(String selection) {
 
-        switch (selection) {
-            case 'C':
-
-                break;
+        char charSelection = selection.toUpperCase().charAt(0);
+        
+        switch (charSelection) {
             case 'I':
-
+                searchItems();
                 break;
             case 'N':
 
@@ -55,11 +53,28 @@ public class GameMenuView extends View {
                 System.out.println(Cluna.getCurrentGame().getMap().getMapDisplay());
                 break;
             case 'Q':
-                break;
+                return true;
             default:
                 System.out.println("\nInvalid. Try again.");
                 break;
         }
+        
+        return false;
+    }
+    
+    private void searchItems() {
+        
+        //TODO actually move the item from the location to the player
+        //DO THIS LOGIC IN INVENTORYCONTROL
+        
+        Location currentLocation = Cluna.getPlayer().getLocation();
+        
+        if(currentLocation.getItem() == null) {
+            System.out.println("You find nothing");
+        } else {
+            System.out.println("You found a " + currentLocation.getItem().getName()); 
+        }
+        
     }
 
 }

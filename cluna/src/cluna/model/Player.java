@@ -30,6 +30,10 @@ public class Player implements Serializable{
         this.items = items;
     }
 
+    public void addItem(Item i) {
+        this.items.add(i);
+    }
+    
     public Location getLocation() {
         return location;
     }

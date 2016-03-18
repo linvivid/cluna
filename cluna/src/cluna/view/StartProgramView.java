@@ -43,7 +43,7 @@ public class StartProgramView {
     }
 
     private void displayWelcome(String name) {
-        System.out.println("Welcome " + name + ", the world is at stake.\n\n");
+        System.out.println("Welcome " + name + ", to Cluna\n\n");
     }
     
     private String getPlayerName() {
@@ -52,8 +52,7 @@ public class StartProgramView {
         boolean validName = false;
 
         while (!validName) {
-            System.out.println("\nThis journal belongs to:");
-
+            
             playerName = keyboard.nextLine();
             playerName = playerName.trim();
 

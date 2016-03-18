@@ -9,6 +9,8 @@ package cluna.model;
  *
  * @author Daniel
  */
+
+//TODO make this enum better
 public enum LocationEnum {
     Lab,
     Hospital,
