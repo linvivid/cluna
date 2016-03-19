@@ -6,6 +6,7 @@
 package cluna.view;
 
 import cluna.control.SimulationControl2;
+import cluna.exceptions.WinGameException;
 import java.util.Scanner;
 
 /**
@@ -53,6 +54,7 @@ public class SimulationControl2View {
         
         if(result) {
             System.out.println("B = 15, C = 128, and the answer is 225. The cure has been unlocked.");
+            throw new WinGameException();
         } else{
             System.out.println("Incorrect. You may not access the cure.");
         }

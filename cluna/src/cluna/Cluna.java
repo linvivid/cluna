@@ -8,6 +8,7 @@ package cluna;
 import cluna.model.Game;
 import cluna.model.Player;
 import cluna.view.StartProgramView;
+
 /**
  *
  * @author lindsayprigmore
@@ -16,15 +17,20 @@ public class Cluna {
 
     private static Game currentGame = null;
     private static Player player = null;
-    
-   ////MAIN FUNCTION IS HERE
+
+    ////MAIN FUNCTION IS HERE
     public static void main(String[] args) {
-     
-        StartProgramView startProgramView = new StartProgramView();
-        startProgramView.displayStartProgramView(); 
+            StartProgramView startProgramView = new StartProgramView();
+        try {
+            
+            startProgramView.displayStartProgramView();
+        } catch (Exception e) {
+            e.printStackTrace();
+            startProgramView.displayStartProgramView();
+                    
+        }
     }
- 
-    
+
     public static Game getCurrentGame() {
         return currentGame;
     }
