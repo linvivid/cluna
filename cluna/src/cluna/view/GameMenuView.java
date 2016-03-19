@@ -15,24 +15,25 @@ import cluna.model.Location;
 public class GameMenuView extends View {
 
     public GameMenuView() {
-        super ("\n"
-            + "\n-------------------------"
-            + "\n| Game Menu             |"
-            + "\n| V - View Map"
-            + "\n| I - Search for Items"
-            + "\n| N - Move North"
-            + "\n| E - Move East"
-            + "\n| S - Move South"
-            + "\n| W - Move West"
-            + "\n| Q - Quit to Main Menu"
-            + "\n-------------------------");
-    }    
-    
+        super("\n"
+                + "\n-------------------------"
+                + "\n| Game Menu             |"
+                + "\n| V - View Map"
+                + "\n| I - Search for Items"
+                + "\n| N - Move North"
+                + "\n| E - Move East"
+                + "\n| S - Move South"
+                + "\n| W - Move West"
+                + "\n| R - Run Cure Simulation"
+                + "\n| Q - Quit to Main Menu"
+                + "\n-------------------------");
+    }
+
     @Override
     public boolean doAction(String selection) {
 
         char charSelection = selection.toUpperCase().charAt(0);
-        
+
         switch (charSelection) {
             case 'I':
                 searchItems();
@@ -49,6 +50,9 @@ public class GameMenuView extends View {
             case 'W':
 
                 break;
+            case 'R':
+                runSimulation();
+                break;
             case 'V':
                 System.out.println(Cluna.getCurrentGame().getMap().getMapDisplay());
                 break;
@@ -58,23 +62,27 @@ public class GameMenuView extends View {
                 System.out.println("\nInvalid. Try again.");
                 break;
         }
-        
+
         return false;
+    }
+
+    private void runSimulation() {
+        SimulationControl2View sim2 = new SimulationControl2View();
+        sim2.display();
     }
     
     private void searchItems() {
-        
+
         //TODO actually move the item from the location to the player
         //DO THIS LOGIC IN INVENTORYCONTROL
-        
         Location currentLocation = Cluna.getPlayer().getLocation();
-        
-        if(currentLocation.getItem() == null) {
+
+        if (currentLocation.getItem() == null) {
             System.out.println("You find nothing");
         } else {
-            System.out.println("You found a " + currentLocation.getItem().getName()); 
+            System.out.println("You found a " + currentLocation.getItem().getName());
         }
-        
+
     }
 
 }
