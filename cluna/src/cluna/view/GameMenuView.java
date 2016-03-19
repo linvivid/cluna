@@ -18,7 +18,6 @@ public class GameMenuView extends View {
         super ("\n"
             + "\n-------------------------"
             + "\n| Game Menu             |"
-            + "\n| C - Synthesize Cure"
             + "\n| V - View Map"
             + "\n| I - Search for Items"
             + "\n| N - Move North"
@@ -35,9 +34,6 @@ public class GameMenuView extends View {
         char charSelection = selection.toUpperCase().charAt(0);
         
         switch (charSelection) {
-            case 'C':
-
-                break;
             case 'I':
                 searchItems();
                 break;
