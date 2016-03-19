@@ -66,6 +66,7 @@ public class GameControl {
         Item petriDish = new Item();
         petriDish.setName("Petri Dish");
         items.add(petriDish);
+        
         //end repeat section
         
         return items;
