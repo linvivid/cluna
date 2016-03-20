@@ -62,12 +62,60 @@ public class GameControl {
         
         List<Item> items = new ArrayList<>();
         
-        //TODO Repeat this a lot
+        //list
         Item petriDish = new Item();
-        petriDish.setName("Petri Dish");
+        petriDish.setName("Petri Dish1");
         items.add(petriDish);
         
-        //end repeat section
+        Item petriDish2 = new Item();
+        petriDish2.setName("Petri Dish2");
+        items.add(petriDish2);
+        
+        Item petriDish3 = new Item();
+        petriDish3.setName("Petri Dish3");
+        items.add(petriDish3);
+        
+        Item glassBeaker = new Item();
+        glassBeaker.setName("Glass Beaker");
+        items.add(glassBeaker);
+        
+        Item testTube = new Item();
+        testTube.setName("Test Tube1");
+        items.add(testTube);
+        
+        Item eyeDropper = new Item();
+        eyeDropper.setName("Eye Dropper");
+        items.add(eyeDropper);
+        
+        Item beakerTongs = new Item();
+        beakerTongs.setName("Beaker Tongs");
+        items.add(beakerTongs);
+
+        Item testTube2 = new Item();
+        testTube2.setName("Test Tube2");
+        items.add(testTube2);
+        
+        Item testTube3 = new Item();
+        testTube3.setName("Test Tube3");
+        items.add(testTube3);
+        
+        Item glassFunnel = new Item();
+        glassFunnel.setName("Glass Funnel");
+        items.add(glassFunnel);
+
+        Item testTubeHolder = new Item();
+        testTubeHolder.setName("Test Tube Holder");
+        items.add(testTubeHolder);
+        
+        Item testTubeRack = new Item();
+        testTubeRack.setName("Test Tube Rack");
+        items.add(testTubeRack);
+        
+        Item safetyGoggles = new Item();
+        safetyGoggles.setName("Safety Goggles");
+        items.add(safetyGoggles);
+        
+//end repeat section
         
         return items;
     }

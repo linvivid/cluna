@@ -8,6 +8,7 @@ package cluna.view;
 import cluna.Cluna;
 import cluna.control.GameControl;
 import cluna.exceptions.LoseGameException;
+import cluna.exceptions.TimeRunsOutException;
 import cluna.exceptions.WinGameException;
 import cluna.model.Game;
 import java.util.Scanner;
