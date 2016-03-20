@@ -8,6 +8,7 @@ package cluna.view;
 import cluna.Cluna;
 import cluna.control.GameControl;
 import cluna.exceptions.LoseGameException;
+import cluna.exceptions.OffMapException;
 import cluna.exceptions.TimeRunsOutException;
 import cluna.exceptions.WinGameException;
 import cluna.model.Game;
@@ -65,6 +66,10 @@ public class MainMenuView extends View {
             System.out.println("Congrats! You Win!");
         }catch (LoseGameException lge) {
             System.out.println("Loser!");
+        }catch (TimeRunsOutException troe){
+            System.out.println("Time ran out! Do you want to start a new game?");
+        }catch (OffMapException ome){
+            System.out.println("You went off the Map! Do you want to start a new game?");
         }
        
     }

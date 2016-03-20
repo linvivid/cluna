@@ -9,6 +9,25 @@ package cluna.exceptions;
  *
  * @author lindsayprigmore
  */
-public class TimeRunsOutException {
+public class TimeRunsOutException extends RuntimeException{
+
+    public TimeRunsOutException() {
+    }
+
+    public TimeRunsOutException(String message) {
+        super(message);
+    }
+
+    public TimeRunsOutException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public TimeRunsOutException(Throwable cause) {
+        super(cause);
+    }
+
+    public TimeRunsOutException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+        super(message, cause, enableSuppression, writableStackTrace);
+    }
     
 }

@@ -9,6 +9,25 @@ package cluna.exceptions;
  *
  * @author lindsayprigmore
  */
-public class OffMapException {
+public class OffMapException extends RuntimeException{
+
+    public OffMapException() {
+    }
+
+    public OffMapException(String message) {
+        super(message);
+    }
+
+    public OffMapException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public OffMapException(Throwable cause) {
+        super(cause);
+    }
+
+    public OffMapException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+        super(message, cause, enableSuppression, writableStackTrace);
+    }
     
 }
