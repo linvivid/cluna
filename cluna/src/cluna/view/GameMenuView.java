@@ -15,8 +15,7 @@ import cluna.model.Location;
 public class GameMenuView extends View {
 
     public GameMenuView() {
-        super("\n"
-                + "\n-------------------------"
+        super( "\n-------------------------"
                 + "\n| Game Menu             |"
                 + "\n| V - View Map"
                 + "\n| I - Search for Items"

@@ -11,21 +11,17 @@ package cluna.control;
  */
 public class SimulationControl3 {
     
-    public String runSimulation3(int l,int w,int h){
+    public boolean runSimulation3(int l,int w,int h){
         
         int vol = 200;
-
-        if (l<0 || w<0 || h<0){
-           return "All inputs must be greater than 0.";
-        }
         
         int userAnswer = l * w * h;
 
         if (vol == userAnswer){
-            return "Those inputs do not equal 200.";
+            return false;
         }
         else {
-            return "Correct! You may enter.";
+            return true;
         }
     }           
             

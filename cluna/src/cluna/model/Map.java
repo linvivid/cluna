@@ -13,8 +13,8 @@ import java.io.Serializable;
  */
 public class Map implements Serializable {
 
-    private static final int NUM_ROWS = 5;
-    private static final int NUM_COLS = 5;
+    private static final int NUM_ROWS = 6;
+    private static final int NUM_COLS = 6;
     private Location[][] locations;
 
     public Map() {

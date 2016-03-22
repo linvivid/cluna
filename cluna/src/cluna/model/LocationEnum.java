@@ -12,7 +12,7 @@ package cluna.model;
 
 //TODO make this enum better
 public enum LocationEnum {
-    Lab,
+    Camp,
     Hospital,
     School
 }

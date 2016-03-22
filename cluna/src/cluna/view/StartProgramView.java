@@ -24,8 +24,13 @@ public class StartProgramView {
 
     public void displayBanner() {
         System.out.println(
-                "\n*           Welcome to Cluna.            *"
-                + "\n* Cluna is a text-based roleplaying game.*");
+                "\n*                       Welcome to Cluna.                        *"
+              + "\n*  In this game, you and your group of explorers are trapped on  *"
+              + "\n*  an abandoned planet. After stopping in a desolate town, your  *"
+              + "\n* people were struck by a plague. As the scientist, your task is *"
+              + "\n* to explore the area and find the materials you need to develop *"
+              + "\n*                 a cure in time to save everyone.               *");
+        System.out.println("Please enter your name.");
     }
 
     public void displayStartProgramView() {
