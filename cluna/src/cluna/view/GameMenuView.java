@@ -16,7 +16,7 @@ import cluna.model.Location;
 public class GameMenuView extends View {
 
     public GameMenuView() {
-        super( "\n-------------------------"
+        super("\n-------------------------"
                 + "\n| Game Menu             |"
                 + "\n| V - View Map"
                 + "\n| I - Search for Items"
@@ -39,16 +39,24 @@ public class GameMenuView extends View {
                 searchItems();
                 break;
             case 'N':
-                LocationControl.setLocation('N', Cluna.getPlayer(), Cluna.getCurrentGame().getMap());
+                if (!LocationControl.setLocation('N', Cluna.getPlayer(), Cluna.getCurrentGame().getMap())) {
+                    System.out.println("You cannot move there");
+                }
                 break;
             case 'E':
-                LocationControl.setLocation('E', Cluna.getPlayer(), Cluna.getCurrentGame().getMap());
+                if (!LocationControl.setLocation('E', Cluna.getPlayer(), Cluna.getCurrentGame().getMap())) {
+                    System.out.println("You cannot move there");
+                }
                 break;
             case 'S':
-                LocationControl.setLocation('S', Cluna.getPlayer(), Cluna.getCurrentGame().getMap());
+                if (!LocationControl.setLocation('S', Cluna.getPlayer(), Cluna.getCurrentGame().getMap())) {
+                    System.out.println("You cannot move there");
+                }
                 break;
             case 'W':
-                LocationControl.setLocation('W', Cluna.getPlayer(), Cluna.getCurrentGame().getMap());
+                if (!LocationControl.setLocation('W', Cluna.getPlayer(), Cluna.getCurrentGame().getMap())) {
+                    System.out.println("You cannot move there");
+                }
                 break;
             case 'R':
                 runSimulation();
@@ -70,7 +78,7 @@ public class GameMenuView extends View {
         SimulationControl2View sim2 = new SimulationControl2View();
         sim2.display();
     }
-    
+
     private void searchItems() {
 
         //TODO actually move the item from the location to the player
