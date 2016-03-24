@@ -8,10 +8,12 @@ package cluna.control;
 import cluna.Cluna;
 import cluna.model.Game;
 import cluna.model.Item;
+import cluna.model.Location;
 import cluna.model.Map;
 import cluna.model.Player;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  *
@@ -53,9 +55,20 @@ public class GameControl {
     
     private static void setupItemLocations(Map map, List<Item> items) {
         
-        //TODO randomize item locations
-        map.getLocation(0, 1).setItem(items.get(0));
-        
+        for (Item thing: items){
+            boolean placed = false;
+            while(placed==false){
+                Random r = new Random();
+                int row = r.nextInt(Map.NUM_ROWS);
+                int col = r.nextInt(Map.NUM_COLS);
+                Location l = map.getLocation(row, col);
+                
+                if (l.getItem()==null){
+                    l.setItem(thing);
+                    placed = true;
+                }
+            }
+        }
     }
     
     private static List<Item> createItems() {

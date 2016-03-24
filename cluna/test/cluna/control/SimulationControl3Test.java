@@ -37,15 +37,15 @@ public class SimulationControl3Test {
         int w = 1;
         int h = 1;
         SimulationControl3 instance = new SimulationControl3();
-        String expResult = "All inputs must be greater than 0.";
-        String result = instance.runSimulation3(l, w, h);
+        boolean expResult = false;
+        boolean result = instance.runSimulation3(l, w, h);
         assertEquals(expResult, result);
         
         System.out.println("Test Case 2");
         l = 1;
         w = 0;
         h = 1;
-        expResult = "All inputs must be greater than 0.";
+        expResult = false;
    
         result = instance.runSimulation3(l, w, h);
         assertEquals(expResult, result);
@@ -54,7 +54,7 @@ public class SimulationControl3Test {
         l = 1;
         w = 0;
         h = 1;
-        expResult = "All inputs must be greater than 0.";
+        expResult = false;
    
         result = instance.runSimulation3(l, w, h);
         assertEquals(expResult, result);
@@ -63,7 +63,7 @@ public class SimulationControl3Test {
         l = 2;
         w = 10;
         h = 10;
-        expResult = "Correct! You may enter.";
+        expResult = true;
    
         result = instance.runSimulation3(l, w, h);
         assertEquals(expResult, result);
@@ -72,7 +72,7 @@ public class SimulationControl3Test {
         l = 1;
         w = 10;
         h = 10;
-        expResult = "Those inputs do not equal 200.";
+        expResult = false;
    
         result = instance.runSimulation3(l, w, h);
         assertEquals(expResult, result);

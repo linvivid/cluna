@@ -18,10 +18,10 @@ public class SimulationControl3 {
         int userAnswer = l * w * h;
 
         if (vol == userAnswer){
-            return false;
+            return true;
         }
         else {
-            return true;
+            return false;
         }
     }           
             

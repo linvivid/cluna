@@ -6,6 +6,7 @@
 package cluna.view;
 
 import cluna.Cluna;
+import cluna.control.LocationControl;
 import cluna.model.Location;
 
 /**
@@ -38,16 +39,16 @@ public class GameMenuView extends View {
                 searchItems();
                 break;
             case 'N':
-
+                LocationControl.setLocation('N', Cluna.getPlayer(), Cluna.getCurrentGame().getMap());
                 break;
             case 'E':
-
+                LocationControl.setLocation('E', Cluna.getPlayer(), Cluna.getCurrentGame().getMap());
                 break;
             case 'S':
-
+                LocationControl.setLocation('S', Cluna.getPlayer(), Cluna.getCurrentGame().getMap());
                 break;
             case 'W':
-
+                LocationControl.setLocation('W', Cluna.getPlayer(), Cluna.getCurrentGame().getMap());
                 break;
             case 'R':
                 runSimulation();
