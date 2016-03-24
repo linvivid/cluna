@@ -8,6 +8,7 @@ package cluna.view;
 import cluna.Cluna;
 import cluna.control.LocationControl;
 import cluna.model.Location;
+import cluna.control.InventoryControl;
 
 /**
  *
@@ -18,12 +19,13 @@ public class GameMenuView extends View {
     public GameMenuView() {
         super("\n-------------------------"
                 + "\n| Game Menu             |"
-                + "\n| V - View Map"
+                + "\n| M - View Map"
                 + "\n| I - Search for Items"
                 + "\n| N - Move North"
                 + "\n| E - Move East"
                 + "\n| S - Move South"
                 + "\n| W - Move West"
+                + "\n| V - View Inventory"
                 + "\n| R - Run Cure Simulation"
                 + "\n| Q - Quit to Main Menu"
                 + "\n-------------------------");
@@ -61,11 +63,14 @@ public class GameMenuView extends View {
             case 'R':
                 runSimulation();
                 break;
-            case 'V':
+            case 'M':
                 System.out.println(Cluna.getCurrentGame().getMap().getMapDisplay());
                 break;
             case 'Q':
                 return true;
+            case 'V':
+                //show inventory and add view
+                break;
             default:
                 System.out.println("\nInvalid. Try again.");
                 break;
@@ -78,17 +83,23 @@ public class GameMenuView extends View {
         SimulationControl2View sim2 = new SimulationControl2View();
         sim2.display();
     }
+    
+    private void moveItem(){
+        InventoryControl ic = new InventoryControl();
+        ic.moveItem();
+    }
 
     private void searchItems() {
 
         //TODO actually move the item from the location to the player
-        //DO THIS LOGIC IN INVENTORYCONTROL
+        //DONE-  just check by setting up inventory view!
         Location currentLocation = Cluna.getPlayer().getLocation();
 
         if (currentLocation.getItem() == null) {
             System.out.println("You find nothing");
         } else {
             System.out.println("You found a " + currentLocation.getItem().getName());
+            moveItem();
         }
 
     }

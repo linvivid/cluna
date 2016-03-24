@@ -30,6 +30,8 @@ public class Map implements Serializable {
                 int locationTypeIndex = (int) (Math.random() * LocationEnum.values().length);
                 l.setName(LocationEnum.values()[locationTypeIndex].toString());
                 l.setDescription(LocationEnum.values()[locationTypeIndex].toString());
+                l.setRow(row);
+                l.setCol(col);
                 locations[row][col] = l;
             }
         }
