@@ -41,7 +41,6 @@ public class Cluna {
             startProgramView.displayStartProgramView();
         } catch (Exception e) {
             e.printStackTrace();
-            // what is our equivalent for this??
             startProgramView.displayStartProgramView();
         }
         finally {
