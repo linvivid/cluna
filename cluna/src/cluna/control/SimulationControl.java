@@ -34,7 +34,5 @@ public class SimulationControl {
         
         String answer = "At " + numDoses + " doses of "+ doseVolume+ "ml each, there will be " + cureLeft + "mls of cure left, and "+effectiveness+ "% of individuals should develop an immunity.";
         return answer;
-        
-        
     }
 }

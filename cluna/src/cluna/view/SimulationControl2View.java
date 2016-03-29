@@ -46,7 +46,7 @@ public class SimulationControl2View {
             System.out.println("Please input the answer to A + B + C");
             guessAnswer = Integer.parseInt(getInput());
         } catch (Exception e) {
-            System.out.println("Error on input");
+            ErrorView.display(this.getClass().getName(), "Error on input");
         }
 
         SimulationControl2 simulator = new SimulationControl2();

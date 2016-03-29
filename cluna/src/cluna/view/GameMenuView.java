@@ -42,29 +42,29 @@ public class GameMenuView extends View {
                 break;
             case 'N':
                 if (!LocationControl.setLocation('N', Cluna.getPlayer(), Cluna.getCurrentGame().getMap())) {
-                    System.out.println("You cannot move there");
+                    console.println("You cannot move there");
                 }
                 break;
             case 'E':
                 if (!LocationControl.setLocation('E', Cluna.getPlayer(), Cluna.getCurrentGame().getMap())) {
-                    System.out.println("You cannot move there");
+                    console.println("You cannot move there");
                 }
                 break;
             case 'S':
                 if (!LocationControl.setLocation('S', Cluna.getPlayer(), Cluna.getCurrentGame().getMap())) {
-                    System.out.println("You cannot move there");
+                    console.println("You cannot move there");
                 }
                 break;
             case 'W':
                 if (!LocationControl.setLocation('W', Cluna.getPlayer(), Cluna.getCurrentGame().getMap())) {
-                    System.out.println("You cannot move there");
+                    console.println("You cannot move there");
                 }
                 break;
             case 'R':
                 runSimulation();
                 break;
             case 'M':
-                System.out.println(Cluna.getCurrentGame().getMap().getMapDisplay());
+                console.println(Cluna.getCurrentGame().getMap().getMapDisplay());
                 break;
             case 'Q':
                 return true;
@@ -72,7 +72,7 @@ public class GameMenuView extends View {
                 //show inventory and add view
                 break;
             default:
-                System.out.println("\nInvalid. Try again.");
+                console.println("\nInvalid. Try again.");
                 break;
         }
 
@@ -96,9 +96,9 @@ public class GameMenuView extends View {
         Location currentLocation = Cluna.getPlayer().getLocation();
 
         if (currentLocation.getItem() == null) {
-            System.out.println("You find nothing");
+            console.println("You find nothing");
         } else {
-            System.out.println("You found a " + currentLocation.getItem().getName());
+            console.println("You found a " + currentLocation.getItem().getName());
             moveItem();
         }
 

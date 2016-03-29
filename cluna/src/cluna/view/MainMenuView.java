@@ -12,7 +12,6 @@ import cluna.exceptions.OffMapException;
 import cluna.exceptions.TimeRunsOutException;
 import cluna.exceptions.WinGameException;
 import cluna.model.Game;
-import java.util.Scanner;
 
 /**
  *
@@ -27,6 +26,7 @@ public class MainMenuView extends View {
                 + "\n| G - New Game"
                 + "\n| H - Get Help"
                 + "\n| S - Save Game"
+                + "\n| L - Load Game"
                 + "\n| E - Exit"
                 + "\n-------------------------");
     }
@@ -44,12 +44,15 @@ public class MainMenuView extends View {
                 this.displayHelpMenu();
                 break;
             case 'S':
-//                this.saveGame();
+                saveCurrentGame();
+                break;
+            case 'L':
+                loadSavedGame();
                 break;
             case 'E':
                 return true;
             default:
-                System.out.println("\nInvalid. Try again.");
+                console.println("\nInvalid. Try again.");
                 break;
         }
 
@@ -63,18 +66,40 @@ public class MainMenuView extends View {
             GameMenuView gameMenu = new GameMenuView();
             gameMenu.display();
         } catch (WinGameException wge) {
-            System.out.println("Congrats! You Win!");
+            console.println("Congrats! You Win!");
         }catch (LoseGameException lge) {
-            System.out.println("Loser!");
+            console.println("Loser!");
         }catch (TimeRunsOutException troe){
-            System.out.println("Time ran out! Do you want to start a new game?");
+            console.println("Time ran out! Do you want to start a new game?");
         }catch (OffMapException ome){
-            System.out.println("You went off the Map! Do you want to start a new game?");
+            console.println("You went off the Map! Do you want to start a new game?");
         }
        
     }
 
     private void displayHelpMenu() {
-        System.out.println("TO BE IMPLEMENTED");
+        console.println("TO BE IMPLEMENTED");
+    }
+    
+    private void saveCurrentGame(){
+        console.println("Enter file name: ");
+        try{
+            String fileName = keyboard.readline();
+            GameControl.saveGame(fileName);
+        } catch (Exception e){
+            ErrorView.display(this.getClass().getName(), "Error on input");
+        }
+    }
+    
+    private void loadSavedGame(){
+        console.println("Enter file name: ");
+        try {
+            String fileName = keyboard.readLine();
+            GameControl.loadGame(fileName);
+            GameMenuView gmv = new GameMenuView();
+            gmv.display();
+        } catch (Exception e) {
+            ErrorView.display(this.getClass().getName(), "Error on input.");
+        }
     }
 }

@@ -11,6 +11,7 @@ import cluna.model.Item;
 import cluna.model.Location;
 import cluna.model.Map;
 import cluna.model.Player;
+import cluna.view.ErrorView;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -132,5 +133,31 @@ public class GameControl {
         
         return items;
     }
-
+    
+    public static void saveGame(String filePath) {
+        try{
+            FileOutputStream fos = new FileOutputStream(filePath);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            
+            oos.writeObject(Cluna.getCurrentGame());         
+        } catch(Exception e){
+            ErrorView.display("GameControl", e.getMessage());
+        }
+    }
+    
+    public static void loadGame(String filePath){
+        Game game = null;
+        
+        try{
+            FileInputStream fis = new FileInputStream(filePath);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            
+            game = (Game)ois.readObject();
+            
+            Cluna.setCurrentGame(game);
+            Cluna.setPlayer(game.getPlayer());
+        } catch (Exception e) {
+            ErrorView.display("GameControl", e.getMessage());
+        }
+    }
 }

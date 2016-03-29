@@ -5,11 +5,15 @@
  */
 package cluna.view;
 
-import java.util.Scanner;
+import cluna.Cluna;
+import java.io.PrintWriter;
+import java.io.BufferedReader;
 
 public abstract class View implements ViewInterface {
 
         protected String displayMessage;
+        protected final PrintWriter console = Cluna.getOutFile();
+        protected final BufferedReader keyboard = Cluna.getInFile();
 
         public View() {
         }
@@ -36,19 +40,23 @@ public abstract class View implements ViewInterface {
 
         @Override
         public String getInput() {
-            Scanner keyboard = new Scanner(System.in);
             String input = " ";
             boolean validInput = false;
 
             while (!validInput) {
-                System.out.println("\n" + this.displayMessage);
-
-                input = keyboard.nextLine();
+                console.println("\n" + this.displayMessage);
+                
+                try{
+                    input = keyboard.readLine();
+                } catch (Exception e){
+                    ErrorView.display(this.getClass().getName(), "Error reading input.");
+                }
+                    
                 input = input.trim();
                 input = input.toUpperCase();
 
                 if (input.length() < 1) {
-                    System.out.println("\nInvalid value: You must enter a character.");
+                    console.println("\nInvalid value: You must enter a character.");
                     continue;
                 }
                 break;
