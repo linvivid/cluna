@@ -13,7 +13,7 @@ import cluna.model.Player;
  *
  * @author gardensun
  */
-public class StartProgramView extends View{
+public class StartProgramView extends View {
 //Banner to show first then prompt message
 //
 
@@ -77,6 +77,11 @@ public class StartProgramView extends View{
         }
 
         return playerName;
+    }
+
+    @Override
+    public boolean doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

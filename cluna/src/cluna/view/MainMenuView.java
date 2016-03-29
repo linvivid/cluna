@@ -84,7 +84,7 @@ public class MainMenuView extends View {
     private void saveCurrentGame(){
         console.println("Enter file name: ");
         try{
-            String fileName = keyboard.readline();
+            String fileName = keyboard.readLine();
             GameControl.saveGame(fileName);
         } catch (Exception e){
             ErrorView.display(this.getClass().getName(), "Error on input");
