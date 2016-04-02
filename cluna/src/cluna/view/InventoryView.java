@@ -13,11 +13,11 @@ import java.util.List;
  *
  * @author gardensun
  */
-public class InventoryView extends View{
+public class InventoryView extends View {
     
     public InventoryView(){
         String view = createInventoryView();
-        System.out.println(view);
+        console.println(view);
     }
     
     private String createInventoryView(){
@@ -28,5 +28,10 @@ public class InventoryView extends View{
             view += "\n- " + Cluna.getPlayer().getItems().get(count).getName();
         }
         return view;
+    }
+    
+    @Override
+    public boolean doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
