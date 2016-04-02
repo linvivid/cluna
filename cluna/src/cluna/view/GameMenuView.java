@@ -9,6 +9,7 @@ import cluna.Cluna;
 import cluna.control.LocationControl;
 import cluna.model.Location;
 import cluna.control.InventoryControl;
+import cluna.view.ErrorView;
 
 /**
  *
@@ -69,7 +70,12 @@ public class GameMenuView extends View {
             case 'Q':
                 return true;
             case 'V':
-                //show inventory and add view
+                try{
+                    InventoryView inventoryView = new InventoryView();
+                    inventoryView.display();
+                }catch(Exception e){
+                    ErrorView.display(this.getClass().getName(), "Inventory View did not complete.");
+                }
                 break;
             default:
                 console.println("\nInvalid. Try again.");
