@@ -13,25 +13,17 @@ import java.util.List;
  *
  * @author gardensun
  */
-public class InventoryView extends View {
+public class InventoryView {
     
     public InventoryView(){
-        String view = createInventoryView();
-        console.println(view);
     }
     
-    private String createInventoryView(){
+    public String createInventoryView(){
         List<Item> items = Cluna.getPlayer().getItems();
-        int upperBound = items.lastIndexOf(items);
         String view = "-----Iventory-----";
-        for (int count = 0; count <= Cluna.getPlayer().getItems().lastIndexOf(0); count++){
-            view += "\n- " + Cluna.getPlayer().getItems().get(count).getName();
+        for (int count = 0; count < items.size(); count++){
+            view += "\n- " + items.get(count).getName();
         }
         return view;
-    }
-    
-    @Override
-    public boolean doAction(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

@@ -72,8 +72,10 @@ public class GameMenuView extends View {
             case 'V':
                 try{
                     InventoryView inventoryView = new InventoryView();
-                    inventoryView.display();
+                    String inventory = inventoryView.createInventoryView();
+                    console.println(inventory);
                 }catch(Exception e){
+                    e.printStackTrace();
                     ErrorView.display(this.getClass().getName(), "Inventory View did not complete.");
                 }
                 break;
