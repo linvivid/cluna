@@ -15,7 +15,7 @@ import cluna.model.Location;
  */
 public class InventoryControl {
  
-    //TODO methods that move the item from location to player
+   
     public boolean moveItem(){
         Location currentLocation = Cluna.getPlayer().getLocation();
         Cluna.getPlayer().addItem(currentLocation.getItem());
